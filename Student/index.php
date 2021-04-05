@@ -121,7 +121,7 @@ if(isset($_POST['Submit'])) {
 </div>
 </form>
 
-<div class="footer"><a href="../Developers/index.php" style="color: white;">Made with 💚 for</a> <a href="../Developers/index.php" style="color: white; background-color: black;">KARE</a>
+<div class="footer">Developed with 💚 by <a href="../Developers/Developers.php" style="color: white; background-color: black;"><b> Software Development Team, KARE </b></a>
 </div>
 
 </div>
@@ -174,7 +174,7 @@ if(isset($_POST['Login'])) {
 <a href="index.php?create_user" class="txt1">Create an account</a>
 </div>
 
-<div class="footer"><a href="../Developers/index.php" style="color: white;">Made with 💚 for</a> <a href="../Developers/index.php" style="color: white; background-color: black;">KARE</a>
+<div class="footer">Developed with 💚 by <a href="../Developers/Developers.php" style="color: white; background-color: black;"><b> Software Development Team, KARE </b></a>
 </div>
 
 </form>

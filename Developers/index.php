@@ -7,7 +7,7 @@
     <meta name="description" content="Software Development Team, KARE | Shibin Varghese , Pandiyan Kartik Raja S, Surya Velavan C G, Praveen S V, Manoj Kumar">
     <meta name="author" content="Shibin Varghese , Pandiyan Kartik Raja S, Surya Velavan C G, Praveen S V, Manoj Kumar">
     <link rel="icon" href="kare_icon.ico">
-    <title>MOOC Portal Developers</title>
+    <title>MOOC, Developers</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet">    
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
@@ -39,7 +39,7 @@
         <div class="row" style="text-align:center; border-bottom:1px dashed #ccc;  padding:30px 0 20px 0; margin-bottom:40px;">
             <div class="col-lg-12">
             <h3 style="font-family:'Bree Serif', arial; font-weight:bold; font-size:30px;">
-                <a style="text-decoration:none; color:#666;" href="./index.php">Software Development Team, <span style="color:red;">KARE</span></a>
+                <a style="text-decoration:none; color:#666;" href="#">Software Development Team, <span style="color:red;">KARE</span></a>
             </h3>
             <p>Developers of Massive Open Online Course (MOOC) Portal</p>
             </div>
@@ -49,8 +49,7 @@
                 <img alt="Dr. R. Ramalakshmi"  src="ramalakshmi.jpg">
                 <p><b>Dr. R. Ramalakshmi</b><br>
                 Deputy Director (R&D) and Associate Professor, CSE<br>
-                  <a href="https://www.linkedin.com/in/dr-r-ramalakshmi-8b932363/" target="_blank">LinkedIn</a> <br>
-                  📞 <a href="tel: +919486488642">+91 94864 88642</a><br>
+                  <a href="https://www.linkedin.com/in/dr-r-ramalakshmi-8b932363/" target="_blank">LinkedIn</a> <br><br>
                   📧 <a href = "mailto: rama@klu.ac.in">rama@klu.ac.in</a>
                 </p>
             </li>

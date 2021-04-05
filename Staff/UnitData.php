@@ -12,20 +12,6 @@
     <link rel="stylesheet" href="css/style2.css">
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-
-<style>
-
-.footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  text-align: center;
-}
-
-</style>
-
 </head>
 <body>
 <?php
@@ -289,8 +275,7 @@ foreach($unitStore as $k=>$v){
     ?>
 
 </div>
-<div class="footer"><a href="../Developers/index.php" style="color: black;">Made with 💚 for</a> <a href="../Developers/index.php" style="color: red;">KARE</a>
-</div>
+
 <?php include('./footer.html'); ?>
 
 </body>

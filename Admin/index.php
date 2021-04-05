@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Admin Login | MOOC</title>
+	<title>Staff Login / Signup</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/kare_icon.ico" />
@@ -111,7 +111,7 @@ if(isset($_POST['Submit'])) {
 </div>
 </form>
 
-<div class="footer"><a href="../Developers/index.php" style="color: white;">Made with 💚 for</a> <a href="../Developers/index.php" style="color: white; background-color: black;">KARE</a>
+<div class="footer">Developed with 💚 by <a href="../Developers/Developers.php" style="color: white; background-color: black;"><b> Software Development Team, KARE </b></a>
 </div>
 
 </div>
@@ -162,7 +162,7 @@ if(isset($_POST['Login'])) {
 </div>
 
 
-<div class="footer"><a href="../Developers/index.php" style="color: white;">Made with 💚 for</a> <a href="../Developers/index.php" style="color: white; background-color: black;">KARE</a>
+<div class="footer">Developed with 💚 by <a href="../Developers/Developers.php" style="color: white; background-color: black;"><b> Software Development Team, KARE </b></a>
 </div>
 
 </form>

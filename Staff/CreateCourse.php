@@ -79,35 +79,27 @@ if(isset($_POST['Cancel']))
 <input type="text" name="Duration" class="form-control">
 </div>
 
-<div class="form-group">
 <label for="ExpiryDate"><b>DUE DATE</b></label>
-<input type="datetime-local"  name="ExpiryDate" class="form-control">
-</div>
+<input type="datetime-local"  name="ExpiryDate" class="form-control"><br>
 
-<label for="CompilerReq"><b>COMPILER REQUIRED</b></label>
-
+<label for="CompilerReq"><b>COMPILER REQUIRED</b></label><br>
 <div class="radio">
 <input type="radio"  name="CompilerReq" value="Yes">
 <label for="CompilerReq">Yes</label>
 </div>
-
 <div class="radio">
 <input type="radio"  name="CompilerReq" value="No" checked>
-<label for="CompilerReq">No</label>
-</div>
-
-<div class="form-group">
+<label for="CompilerReq">No</label><br>
 <input type="submit" name ="Submit" class="btn btn-success">
+
 <input type="submit" name ="Cancel" value="Cancel" class="btn btn-danger">
-</div>
-
 </form>
-
-</div>
-
-<br>
+<br><br>
 <div class="footer"><a href="../Developers/index.php" style="color: black;">Made with 💚 for</a> <a href="../Developers/index.php" style="color: red;">KARE</a>
 </div>
+</div>
+
+
 
 </body>
 </html>
