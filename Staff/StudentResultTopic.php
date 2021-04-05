@@ -84,15 +84,8 @@ $StudentRegNo;
 <input type="submit" name="PDF" value="Download PDF" class="btn btn-danger">
 <button onclick="exportToExcel('tblexportData', 'Spreadsheet')" class="btn btn-success">Download Excel</button>
 </form>
-
 <div id="tblexportData">
 <h1>MCQ</h1>
-<table border="1" id='customers'>
-<tr>
-    <th>Register Number</th>
-    <th>Name</th>
-    <th>Total Mark</th>
-</tr>
 <?php
 $radTopic=$arr[0]['topic'];
 $StudentRegNo=$arr[0]['RegNo'];
@@ -100,6 +93,14 @@ echo("<center><h3>Topic Name: ".$radTopic."</h3></center>");
 foreach($arr as $a){
     if($radTopic==$a['topic']){
     ?>
+<table border="1" id='customers'>
+<tr>
+    <th>Register Number</th>
+    <th>Name</th>
+    <th>Total Mark</th>
+
+</tr>
+
      <?php
     echo("<tr>");
     echo("<td>");
@@ -112,10 +113,7 @@ foreach($arr as $a){
     echo($a['total']);
     echo("</td>");
     echo("</tr>");
-    echo("</table>")
     ?>
-
-
 <?php }
 
 else{
@@ -124,11 +122,12 @@ else{
     $radTopic=$a['topic'];
     echo("<center><h3>Topic Name:".$radTopic."</h3></center>");
     ?>
-<table border="1" id='customers'>
+    <table border="1" id='customers'>
 <tr>
     <th>Register Number</th>
     <th>Name</th>
     <th>Total Mark</th>
+
 </tr>
 <?php
 echo("<tr>");
@@ -141,19 +140,14 @@ echo("</td>");
 echo("<td>");
 echo($a['total']);
 echo("</td>");
-
+echo("</tr>");
+echo("</table>");
 }
+echo("</table>");
 
 }?>
-</table>
 
 <h1>True/False</h1>
-<table border="1" id='customers'>
-<tr>
-    <th>Register Number</th>
-    <th>Name</th>
-    <th>Total Mark</th>
-</tr>
 <?php
 $truefalse=$arr2[0]['topic'];
 $StudentRegNo=$arr2[0]['RegNo'];
@@ -161,7 +155,13 @@ echo("<center><h3>Topic Name: ".$truefalse."</h3></center>");
 foreach($arr2 as $a){
     if($truefalse==$a['topic']){
     ?>
+<table border="1" id='customers'>
+<tr>
+    <th>Register Number</th>
+    <th>Name</th>
+    <th>Total Mark</th>
 
+</tr>
 
      <?php
     echo("<tr>");
@@ -175,7 +175,6 @@ foreach($arr2 as $a){
     echo($a['total']);
     echo("</td>");
     echo("</tr>");
-    echo("</table>");
     ?>
 <?php }
 
@@ -185,11 +184,12 @@ else{
     $truefalse=$a['topic'];
     echo("<center><h3>Topic Name: ".$truefalse."</h3></center>");
     ?>
-<table border="1" id='customers'>
+    <table border="1" id='customers'>
 <tr>
     <th>Register Number</th>
     <th>Name</th>
     <th>Total Mark</th>
+
 </tr>
 <?php
 echo("<tr>");
@@ -203,19 +203,13 @@ echo("<td>");
 echo($a['total']);
 echo("</td>");
 echo("</tr>");
-
+echo("</table>");
 }
+echo("</table>");
 
 }?>
-</table>
 
 <h1>Short Answer</h1>
-<table border="1" id='customers'>
-<tr>
-    <th>Register Number</th>
-    <th>Name</th>
-    <th>Total Mark</th>
-</tr>
 <?php
 $shortans=$arr3[0]['Topic'];
 $StudentRegNo=$arr3[0]['RegNo'];
@@ -223,6 +217,13 @@ echo("<h3>".$shortans."</h3>");
 foreach($arr3 as $a){
     if($shortans==$a['topic']){
     ?>
+<table border="1" id='customers'>
+<tr>
+    <th>Register Number</th>
+    <th>Name</th>
+    <th>Total Mark</th>
+
+</tr>
 
      <?php
     echo("<tr>");
@@ -236,7 +237,6 @@ foreach($arr3 as $a){
     echo($a['total']);
     echo("</td>");
     echo("</tr>");
-    echo("</table>");
     ?>
 <?php }
 
@@ -246,14 +246,13 @@ else{
     $shortans=$a['topic'];
     echo("<center><h3>Topic Name: ".$shortans."</h3></center>");
     ?>
-
-<table border="1" id='customers'>
+    <table border="1" id='customers'>
 <tr>
     <th>Register Number</th>
     <th>Name</th>
     <th>Total Mark</th>
-</tr>
 
+</tr>
 <?php
 echo("<tr>");
 echo("<td>");
@@ -266,11 +265,11 @@ echo("<td>");
 echo($a['total']);
 echo("</td>");
 echo("</tr>");
-
+echo("</table>");
 }
+echo("</table>");
 
 }?>
-</table>
 </div>
 </div>
 	</div>

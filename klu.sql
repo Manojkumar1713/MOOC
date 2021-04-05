@@ -1,7 +1,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
---  Pravee
+--  Praveen
 CREATE TABLE Staff (
   StaffID varchar(255) PRIMARY KEY, 
   Name varchar(255) NOT NULL,
@@ -481,12 +481,4 @@ CREATE TABLE About (
   date1 Timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT FK_CourseID  FOREIGN KEY (CourseID) REFERENCES Courses(CourseID),
   CONSTRAINT FK_StaffID  FOREIGN KEY (StaffID) REFERENCES Staffs(StaffID)
-);
-CREATE TABLE Administrator (
-  ID varchar(255) PRIMARY KEY, 
-  Name varchar(255) NOT NULL,
-  Password varchar(255) NOT NULL,
-  Email  varchar(255) NOT NULL,
-  PhoneNo  varchar(255) NOT NULL 
-
 );

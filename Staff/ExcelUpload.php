@@ -39,11 +39,12 @@ if(isset($_POST["submit"]))
           $opC=$filesop[5];
           $opD=$filesop[6];
           $correct=$filesop[7];
+          $correct2=$filesop[8];
+          $correct3=$filesop[9];
           
-          
-          $sql=$conn->prepare("INSERT INTO quiz ( Unit,Topic,FilePath,Qname,opA,opB,opC,opD,correct,QuestionType,CourseID,StaffID)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
-           $sql->bind_param("ssssssssssss",$unit,$topic,$file,$question,$opA,$opB,$opC,$opD,$correct,$QuestionType,$CourseID,$StaffID);
+          $sql=$conn->prepare("INSERT INTO quiz ( Unit,Topic,FilePath,Qname,opA,opB,opC,opD,correct,correct2,correct3,QuestionType,CourseID,StaffID)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+           $sql->bind_param("ssssssssssssss",$unit,$topic,$file,$question,$opA,$opB,$opC,$opD,$correct,$correct2,$correct3,$QuestionType,$CourseID,$StaffID);
            $sql->execute();
            
            

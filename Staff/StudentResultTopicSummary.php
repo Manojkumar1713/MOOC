@@ -60,7 +60,6 @@ include "CourseDetails.php";
 $StudentDetails=array();
 $studentmark = new CourseDetails;
 $arr= $studentmark->TopicSummaryReport();
-//$_SESSION['topicarray']=$arr;
 //global $b;
 $newarr=array();
 $radTopic;
@@ -87,8 +86,8 @@ $StudentRegNo;
 <br>
 <div>
 <form action="" method="post">
-    <input type="text" name="search" class="form-control">
-    <input type="submit" name="searchbutt" value="Search" class="btn btn-info" style="float: right;">
+    <input type="text" name="search">
+    <input type="submit" name="searchbutt" value="Search" >
 </div>
 </form>
 <?php
@@ -98,30 +97,27 @@ if(isset($_POST['searchbutt'])){
             array_push($newarr,$a);
         }
     }
-   
-    $_SESSION['topicarray']=$newarr;
 }
 
 ?>
-<div id="tblexportData">
-<table border="1" id='customers'>
-<tr>
-    <th>Register Number</th>
-    <th>Name</th>
-    <th>Total Mark</th>
-</tr>
+
 
 <?php
 
 if($newarr==null){
-//$_SESSION['topicarray']=$arr;
-
 $radTopic=$arr[0]['topic'];
 $StudentRegNo=$arr[0]['RegNo'];
 echo("<center><h3>Topic Name: " .$radTopic."</h3></center>");
 foreach($arr as $a){
     if($radTopic==$a['topic']){
     ?>
+<table border="1" id='customers'>
+<tr>
+    <th>Register Number</th>
+    <th>Name</th>
+    <th>Total Mark</th>
+
+</tr>
 
      <?php
     echo("<tr>");
@@ -135,7 +131,6 @@ foreach($arr as $a){
     echo($a['total']);
     echo("</td>");
     echo("</tr>");
-    echo("</table>");
     ?>
 <?php }
 
@@ -145,67 +140,7 @@ else{
     $radTopic=$a['topic'];
     echo("<center><h3>Topic Name:".$radTopic."</h3></center>");
     ?>
-<table border="1" id='customers'>
-<tr>
-    <th>Register Number</th>
-    <th>Name</th>
-    <th>Total Mark</th>
-</tr>
-<?php
-echo("<tr>");
-echo("<td>");
-echo($a['RegNo']);
-echo("</td>");
-echo("<td>");
-echo($a['Name']);
-echo("</td>");
-echo("<td>");
-echo($a['total']);
-echo("</td>");
-
-}
-
-}?>
-</table>
-</div>
-</div>
-	</div></div>
-
-<?php include('./footer.html');
-if(isset($_POST['PDF'])){
-echo("<script>location.href = './StudentResultTopicSummaryPrint.php';</script>");
-}
-}
-else{
-    $radTopic=$newarr[0]['topic'];
-$StudentRegNo=$newarr[0]['RegNo'];
-echo("<center><h3>Topic Name: " .$radTopic."</h3></center>");
-foreach($newarr as $a){
-    if($radTopic==$a['topic']){
-    ?>
-   <?php
-    echo("<tr>");
-    echo("<td>");
-    echo($a['RegNo']);
-    echo("</td>");
-    echo("<td>");
-    echo($a['Name']);
-    echo("</td>");
-    echo("<td>");
-    echo($a['total']);
-    echo("</td>");
-    echo("</tr>");
-    ?>
-<?php }
-
-else{
-    $totalRad=0;
-    echo("</table>");
-    $radTopic=$a['topic'];
-    echo("<center><h3>Topic Name:".$radTopic."</h3></center>");
-    ?>
-
-<table border="1" id='customers'>
+    <table border="1" id='customers'>
 <tr>
     <th>Register Number</th>
     <th>Name</th>
@@ -224,12 +159,82 @@ echo("<td>");
 echo($a['total']);
 echo("</td>");
 echo("</tr>");
-
+echo("</table>");
 }
-
+echo("</table>");
 
 }?>
-</table>
+
+</div>
+</div>
+	</div></div>
+
+<?php include('./footer.html');
+if(isset($_POST['PDF'])){
+echo("<script>location.href = './StudentResultTopicSummaryPrint.php';</script>");
+}
+}
+else{
+    $radTopic=$newarr[0]['topic'];
+$StudentRegNo=$newarr[0]['RegNo'];
+echo("<center><h3>Topic Name: " .$radTopic."</h3></center>");
+foreach($newarr as $a){
+    if($radTopic==$a['topic']){
+    ?>
+<table border="1" id='customers'>
+<tr>
+    <th>Register Number</th>
+    <th>Name</th>
+    <th>Total Mark</th>
+
+</tr>
+
+     <?php
+    echo("<tr>");
+    echo("<td>");
+    echo($a['RegNo']);
+    echo("</td>");
+    echo("<td>");
+    echo($a['Name']);
+    echo("</td>");
+    echo("<td>");
+    echo($a['total']);
+    echo("</td>");
+    echo("</tr>");
+    ?>
+<?php }
+
+else{
+    $totalRad=0;
+    echo("</table>");
+    $radTopic=$a['topic'];
+    echo("<center><h3>Topic Name:".$radTopic."</h3></center>");
+    ?>
+    <table border="1" id='customers'>
+<tr>
+    <th>Register Number</th>
+    <th>Name</th>
+    <th>Total Mark</th>
+
+</tr>
+<?php
+echo("<tr>");
+echo("<td>");
+echo($a['RegNo']);
+echo("</td>");
+echo("<td>");
+echo($a['Name']);
+echo("</td>");
+echo("<td>");
+echo($a['total']);
+echo("</td>");
+echo("</tr>");
+echo("</table>");
+}
+echo("</table>");
+
+}?>
+
 </div>
 </div>
 	</div></div>
@@ -243,3 +248,30 @@ echo("<script>location.href = './StudentResultTopicSummaryPrint.php';</script>")
 
 </body>
 </html>
+
+ <script>
+      $(document).ready(function(){
+           $('#search').keyup(function(){
+                search_table($(this).val());
+           });
+           function search_table(value){
+                $('#customers tr').each(function(){
+                     var found = 'false';
+                     $(this).each(function(){
+                          if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                          {
+                               found = 'true';
+                          }
+                     });
+                     if(found == 'true')
+                     {
+                          $(this).show();
+                     }
+                     else
+                     {
+                          $(this).hide();
+                     }
+                });
+           }
+      });
+ </script>
