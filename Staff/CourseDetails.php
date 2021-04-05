@@ -83,7 +83,7 @@ class CourseDetails{
          mysqli_close($conn);
     }
         public function GetStudentDetails(){
-            session_start();
+            //session_start();
             $GetStudents=array();
     
             include "db.php";
@@ -485,7 +485,7 @@ class CourseDetails{
             $vari =$_SESSION['ID'];
             $vari2=$_SESSION['RecordID'];
          
-        $sql = "UPDATE studentshortans SET Mark={$vari} WHERE studentMarkId={$vari2} ORDER BY topic";
+        $sql = "UPDATE studentshortans SET Mark={$vari} WHERE studentMarkId={$vari2}";
             
            if ($conn->query($sql) === TRUE) {
              echo "Record updated successfully";
@@ -767,7 +767,7 @@ class CourseDetails{
          include "db.php";
          $vari =$_SESSION['CourseID'];
          $vari="$vari";
-         $sql = "SELECT stu.RegNo,stu.topic,stu.CourseID,Name, SUM(stu.Mark) as total FROM (SELECT studentquizans.RegNo,studentquizans.topic,studentquizans.Mark,studentquizans.CourseID FROM studentquizans UNION ALL SELECT studenttruefalse.RegNo,studenttruefalse.topic,studenttruefalse.Mark,studenttruefalse.CourseID FROM studenttruefalse UNION ALL SELECT studentshortans.RegNo,studentshortans.Topic,studentshortans.Mark,studentshortans.CourseID FROM studentshortans) stu INNER JOIN student on stu.RegNo=student.RegNo WHERE stu.CourseID='{$vari}' GROUP BY stu.RegNo,stu.topic ORDER BY SUM(stu.Mark) DESC";
+         $sql = "SELECT stu.RegNo,stu.topic,stu.CourseID,Name, SUM(stu.Mark) as total FROM (SELECT studentquizans.RegNo,studentquizans.topic,studentquizans.Mark,studentquizans.CourseID FROM studentquizans UNION ALL SELECT studenttruefalse.RegNo,studenttruefalse.topic,studenttruefalse.Mark,studenttruefalse.CourseID FROM studenttruefalse UNION ALL SELECT studentshortans.RegNo,studentshortans.Topic,studentshortans.Mark,studentshortans.CourseID FROM studentshortans) stu INNER JOIN student on stu.RegNo=student.RegNo WHERE stu.CourseID='{$vari}' GROUP BY stu.RegNo,stu.topic ORDER BY stu.topic,SUM(stu.Mark) DESC";
          $result = mysqli_query($conn, $sql);
          if (mysqli_num_rows($result) > 0) 
          {

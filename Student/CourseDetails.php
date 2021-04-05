@@ -237,6 +237,30 @@ class CourseDetails{
              
         //      mysqli_close($conn);
         // }
+
+        public function Restrive(){
+            //session_start();
+            $GetSpecificCourseDetails=array();
+    
+            include "db.php";
+           //echo($vari);
+           $sql = "SELECT * FROM Staff";
+            //echo($sql);
+            $result = mysqli_query($conn, $sql);
+            //var_dump($result);
+            if (mysqli_num_rows($result) > 0) 
+            {
+                while($row = mysqli_fetch_assoc($result)) {
+                   array_push($GetSpecificCourseDetails,$row);
+                }
+            return $GetSpecificCourseDetails;
+             } else {
+                echo "Error retriving Data";
+             }
+             
+             mysqli_close($conn);
+        }
+        
         public function RetriveQuiz(){
             //session_start();
             $GetSpecificCourseDetails=array();

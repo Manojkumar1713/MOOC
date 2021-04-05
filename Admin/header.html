@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/kare_icon.ico">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/style1.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+<style>
+    .footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+<?php
+session_start();
+ $arr=$_SESSION['array'];
+?>
+
+<div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Admin Portal</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="CourseSpecificRedirect.php">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="CourseSpecificRedirect.php?About">List of Course</a>
+                    </li>
+                     <li>
+                        <a href="CourseSpecificRedirect.php?Back">View Courses</a>
+                    </li>
+                    <li>
+                        <a href="CourseSpecificRedirect.php?Staff">Staff Details</a>
+                    </li>
+                    <li class="active">
+                        <a href="#createResource" data-toggle="collapse" aria-expanded="false">Student Details</a>
+                        <ul class="collapse list-unstyled" id="createResource">
+                            <li><a href="CourseSpecificRedirect.php?KareStudents">KARE Students</a></li>
+                            <li><a href="CourseSpecificRedirect.php?OtherStudents">Other College Students</a></li>
+                        </ul>
+                    </li>
+                     <li>
+                        <a href="CourseSpecificRedirect.php?Staff">Change Password</a>
+                    </li>
+                </ul>
+                <ul class="list-unstyled CTAs">
+                    <li><a href="CourseSpecificRedirect.php?Logout" class="download">Logout</a></li>
+                </ul>
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                            </button>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="CourseSpecificRedirect.php?Back">Home</a></li>
+                                <li><a href="CourseSpecificRedirect.php?Logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+<?php
+
+
+// var_dump($_SESSION['array']);
+
+include "ResourceDetails.php";
+if(isset($_GET['UploadResources'])) {
+    echo("<script>location.href = './Resource.php';</script>");
+}
+
+if(isset($_GET['StudentReport'])) {
+    echo("<script>location.href = './StudentReport.php';</script>");
+}
+
+if(isset($_GET['Compiler'])) {
+    session_start();
+    echo("<script>location.href = './Add.php';</script>");
+}
+
+if(isset($_GET['viewStudent'])) {
+    echo("<script>location.href = './viewCourseRegStu.php';</script>");
+}
+
+if(isset($_GET['Resource'])) {
+    echo("<script>location.href = './UnitData.php';</script>");
+}
+
+if(isset($_GET['CreateMCQ'])) {
+
+    echo("<script>location.href = './Quiz.php';</script>");
+}
+
+if(isset($_GET['CreateTrue'])) {
+
+    echo("<script>location.href = './TrueFalse.php';</script>");
+}
+if(isset($_GET['CreateShortAnswer'])) {
+
+    echo("<script>location.href = './ShortAns.php';</script>");
+}
+
+if(isset($_GET['CreateFileUpload'])) {
+
+    echo("<script>location.href = './FileTypeQuestion.php';</script>");
+}
+
+if(isset($_GET['ViewMCQ'])) {
+
+    echo("<script>location.href = './QuizView.php';</script>");
+}
+
+if(isset($_GET['ViewTrue'])) {
+
+    echo("<script>location.href = './TrueFalseView.php';</script>");
+}
+
+if(isset($_GET['ViewShortAnswer'])) {
+
+    echo("<script>location.href = './ShortAnsView.php';</script>");
+}
+
+if(isset($_GET['ViewFileUpload'])) {
+
+    echo("<script>location.href = './FileTypeView.php';</script>");
+}
+
+if(isset($_GET['AssignCreateMCQ'])) {
+
+    echo("<script>location.href = './AssignQuiz.php';</script>");
+}
+
+if(isset($_GET['AssignCreateTrue'])) {
+
+    echo("<script>location.href = './AssignTrueFalse.php';</script>");
+}
+if(isset($_GET['AssignCreateShortAnswer'])) {
+
+    echo("<script>location.href = './AssignShortAns.php';</script>");
+}
+
+if(isset($_GET['AssignCreateFileUpload'])) {
+
+    echo("<script>location.href = './AssignFileTypeQuestion.php';</script>");
+}
+
+if(isset($_GET['AssignViewMCQ'])) {
+
+    echo("<script>location.href = './AssignQuizView.php';</script>");
+}
+
+if(isset($_GET['AssignViewTrue'])) {
+
+    echo("<script>location.href = './AssignTrueFalseView.php';</script>");
+}
+
+if(isset($_GET['AssignViewShortAnswer'])) {
+
+    echo("<script>location.href = './AssignShortAnsView.php';</script>");
+}
+
+if(isset($_GET['AssignViewFileUpload'])) {
+
+    echo("<script>location.href = './AssignFileTypeView.php';</script>");
+}
+
+if(isset($_GET['DiscussionForum'])) {
+
+    echo("<script>location.href = './DiscussionForum.php';</script>");
+}
+
+if(isset($_GET['AddTopic'])) {
+
+    echo("<script>location.href = './Topic.php';</script>");
+}
+
+if(isset($_GET['AssignAddTopic'])) {
+
+    echo("<script>location.href = './AssignQuizTopic.php';</script>");
+}
+
+if(isset($_GET['Annoucement'])) {
+
+    echo("<script>location.href = './AnnouncementForum.php';</script>");
+}
+
+if(isset($_GET['AssignMarkSF'])) {
+
+    echo("<script>location.href = './AssignMarkSF.php';</script>");
+}
+if(isset($_GET['AssignMarkAM'])) {
+
+    echo("<script>location.href = './AssignMarkAssignment.php';</script>");
+}
+if(isset($_GET['AssignmentReport'])) {
+
+    echo("<script>location.href = './AssignmentReport.php';</script>");
+}
+if(isset($_GET['CreatePracticeMCQ'])) {
+
+    echo("<script>location.href = './PracticeQuiz.php';</script>");
+}
+if(isset($_GET['CreatePracticeTrueFalse'])) {
+
+    echo("<script>location.href = './PracticeTrueFalse.php';</script>");
+}
+if(isset($_GET['ViewPracticeMCQ'])) {
+
+    echo("<script>location.href = './PracticeQuizView.php';</script>");
+}
+if(isset($_GET['ViewPracticeTrueFalse'])) {
+
+    echo("<script>location.href = './PracticeTrueFalseView.php';</script>");
+}
+if(isset($_GET['QuizTopicReport'])) {
+
+    echo("<script>location.href = './StudentResultTopic.php';</script>");
+}
+if(isset($_GET['AssignmentTopicReport'])) {
+
+    echo("<script>location.href = './AssignmentResultTopic.php';</script>");
+}
+if(isset($_GET['AssignShortAnsMark'])) {
+
+    echo("<script>location.href = './ShortAnsMark.php';</script>");
+}
+if(isset($_GET['AssignAssignmentMark'])) {
+
+    echo("<script>location.href = './AssignmentMark.php';</script>");
+}
+if(isset($_GET['StudentAssignmentResult'])) {
+
+    echo("<script>location.href = './StudentAssignmentResult.php';</script>");
+}
+if(isset($_GET['PrivateForum'])) {
+
+    echo("<script>location.href = './PrivateForum.php';</script>");
+}
+if(isset($_GET['Feedback'])) {
+
+    echo("<script>location.href = './Feedback.php';</script>");
+}
+if(isset($_GET['MarkReport'])) {
+
+    echo("<script>location.href = './AssessmentMarkReport.php';</script>");
+}
+if(isset($_GET['AssignmentMarkReport'])) {
+
+    echo("<script>location.href = './AssignmentMarkReport.php';</script>");
+}
+if(isset($_GET['About'])) {
+
+    echo("<script>location.href = './About.php';</script>");
+}
+if(isset($_GET['StudentResultTopicSummary'])) {
+
+    echo("<script>location.href = './StudentResultTopicSummary.php';</script>");
+}
+if(isset($_GET['Logout'])) {
+    session_destroy();
+    echo("<script>location.href = './index.php';</script>");
+}
+if(isset($_GET['EditAssignmentMark'])) {
+   
+    echo("<script>location.href = './EditAssignmentMark.php';</script>");
+}
+if(isset($_GET['UploadCSV'])) {
+   
+    echo("<script>location.href = './ExcelUpload.php';</script>");
+}
+if(isset($_GET['AssignTopic'])) {
+   
+    echo("<script>location.href = './AssignQuizTopic.php';</script>");
+}
+if(isset($_GET['Staff'])) {
+   
+    echo("<script>location.href = './StaffMembers.php';</script>");
+}
+if(isset($_GET['KareStudents'])) {
+   
+    echo("<script>location.href = './viewCourseRegStu.php';</script>");
+}
+if(isset($_GET['OtherStudents'])) {
+   
+    echo("<script>location.href = './viewOtherCourseRegStu.php';</script>");
+}
+?>
+
+<div>
+
+
+
+<div class="footer">Developed with 💚 by <a href="../Developers/Developers.php" style="color: red;">Software Development Team, KARE</a>
+</div>

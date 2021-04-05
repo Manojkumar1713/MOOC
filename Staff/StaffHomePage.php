@@ -115,7 +115,7 @@ include "CourseDetails.php";
 </div>
 </form>
 
-<div class="footer">Developed with 💚 by <a href="../Developers/Developers.php" style="color: red;">Software Development Team, KARE</a>
+<div class="footer"><a href="../Developers/index.php" style="color: black;">Made with 💚 for</a> <a href="../Developers/index.php" style="color: red;">KARE</a>
 </div>
 
 </body>

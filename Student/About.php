@@ -22,9 +22,10 @@ $instance = new CourseDetails;
 $about=$instance->GetAboutData();
 ?>
 <div class="container-fluid">
-<div class="jumbotron" style="background-color: #222d32; padding-top: 5px; padding-bottom: 15px;">
-    <h1 style="background-color: white; color: #222d32;">ABOUT COURSE</h1>
+<div class="jumbotron" style="background-color: #2a103c; padding-top: 5px; padding-bottom: 15px;">
+    <h1 style="background-color: white; color: #2a103c;">ABOUT COURSE</h1>
 </div>
+
 <?php 
  foreach($about as $a)
  echo($a['Ans']);
@@ -32,14 +33,10 @@ $about=$instance->GetAboutData();
 
 </br>
 
-<a href="../Staff/uploads/<?php echo $a['CourseID']."/".$a['Link1'] ?>">
-            <?php echo($a['Link1'])?>
-</a> 
-
-</br>
-<a href="../Staff/uploads/<?php echo $a['CourseID']."/".$a['Link2'] ?>">
-            <?php echo($a['Link2'])?>
-</a>     
+<h2>Course Plan</h2>
+<iframe src="../Staff/uploads/<?php echo $a['CourseID']."/".$a['Link1'] ?>" style="width: 100%; height: 500px;"></iframe>
+<h2>Course Syllabus</h2>
+<iframe src="../Staff/uploads/<?php echo $a['CourseID']."/".$a['Link2'] ?>" style="width: 100%; height: 500px;"></iframe>
 
 <?php include('./footer.html'); ?>
 

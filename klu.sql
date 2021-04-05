@@ -482,3 +482,11 @@ CREATE TABLE About (
   CONSTRAINT FK_CourseID  FOREIGN KEY (CourseID) REFERENCES Courses(CourseID),
   CONSTRAINT FK_StaffID  FOREIGN KEY (StaffID) REFERENCES Staffs(StaffID)
 );
+CREATE TABLE Administrator (
+  ID varchar(255) PRIMARY KEY, 
+  Name varchar(255) NOT NULL,
+  Password varchar(255) NOT NULL,
+  Email  varchar(255) NOT NULL,
+  PhoneNo  varchar(255) NOT NULL 
+
+);

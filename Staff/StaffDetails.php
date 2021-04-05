@@ -33,16 +33,7 @@ class StaffDetails{
     public function GetStaffDetails(){
         $GetStaffsDetails=array();
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $port="3308";
-        $db = "klu";
-        $conn = mysqli_connect($servername, $username, $password,$db,$port);
-        // Check connection
-        if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-        }
+        include "db.php";
         $sql = "SELECT * FROM staff";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) 
@@ -88,16 +79,7 @@ class StaffDetails{
         session_start();
  
         $GetStaffsDetails=array();
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $port="3308";
-        $db = "klu";
-        $conn = mysqli_connect($servername, $username, $password,$db,$port);
-        // Check connection
-        if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-        }
+        include "db.php";
         $sql = "SELECT CourseID, Name, ExpiryDate FROM course where StaffID = '{$_SESSION['StaffID']}'";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) 

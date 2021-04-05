@@ -26,7 +26,7 @@ session_start(); ?>
 include "CourseDetails.php";
 $StudentDetails=array();
 $studentmark = new CourseDetails;
-$arr= $studentmark->TopicSummaryReport();
+$arr= $_SESSION['topicarray'];
 //global $b;
 $radTopic;
 $checkTopic;
@@ -65,7 +65,12 @@ foreach($_SESSION['array'] as $a){
     ?>
    </h2>
 <?php }?>
-
+<table border="1" id='customers'>
+<tr>
+    <th>Register Number</th>
+    <th>Name</th>
+    <th>Total Mark</th>
+</tr>
 <?php
 $radTopic=$arr[0]['topic'];
 $StudentRegNo=$arr[0]['RegNo'];
@@ -73,15 +78,9 @@ echo("<center><h3>Topic Name: ".$radTopic."</h3></center>");
 foreach($arr as $a){
     if($radTopic==$a['topic']){
     ?>
-<table border="1" id='customers'>
-<tr>
-    <th>Register Number</th>
-    <th>Name</th>
-    <th>Total Mark</th>
 
-</tr>
 
-     <?php
+    <?php
     echo("<tr>");
     echo("<td>");
     echo($a['RegNo']);
@@ -93,21 +92,22 @@ foreach($arr as $a){
     echo($a['total']);
     echo("</td>");
     echo("</tr>");
+   
     ?>
 <?php }
 
 else{
     $totalRad=0;
-    echo("</table>");
+  
     $radTopic=$a['topic'];
     echo("<center><h3>Topic Name:".$radTopic."</h3></center>");
     ?>
-    <table border="1" id='customers'>
+
+<table border="1" id='customers'>
 <tr>
     <th>Register Number</th>
     <th>Name</th>
     <th>Total Mark</th>
-
 </tr>
 <?php
 echo("<tr>");
@@ -121,12 +121,11 @@ echo("<td>");
 echo($a['total']);
 echo("</td>");
 echo("</tr>");
-echo("</table>");
 }
-echo("</table>");
 
 }?>
 
+</table>
 </div>
 </div>
 	</div>

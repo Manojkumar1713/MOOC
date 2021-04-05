@@ -13,6 +13,15 @@
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+<style>
+	.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+</style>
 </head>
 <body>
 <?php 
@@ -85,7 +94,12 @@ if(isset($_POST['Cancel']))
 
 <input type="submit" name ="Cancel" value="Cancel" class="btn btn-danger">
 </form>
-<br>
+<br><br>
+<div class="footer"><a href="../Developers/index.php" style="color: black;">Made with 💚 for</a> <a href="../Developers/index.php" style="color: red;">KARE</a>
 </div>
+</div>
+
+
+
 </body>
 </html>

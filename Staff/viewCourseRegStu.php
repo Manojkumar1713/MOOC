@@ -5,14 +5,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/kare_icon.ico" />
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/table.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/style2.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 <style>
 #customers {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -83,6 +82,7 @@ function exportToExcel(tableID, filename = ''){
 
 <body>
 <?php error_reporting(E_ERROR | E_PARSE); ?>
+<?php include('./header.html'); ?>
 <div class="container-fluid">
 <form action="" method="post">
 <br>
@@ -139,6 +139,6 @@ if(isset($_POST['PDF'])){
 echo("<script>location.href = './viewCourseRegStuPrint.php';</script>");
 }
 ?>
-
+<?php include('./footer.html'); ?>
 </body>
 </html>

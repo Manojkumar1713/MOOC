@@ -17,6 +17,14 @@
   background-size: cover;
   */background-color: #222d32;*/
 }
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
 </style>
 </head>
 <body>
@@ -99,6 +107,10 @@ include "CourseDetails.php";
 </div>
 </div>
 </form>
+
+<div class="footer"><a href="../Developers/index.php" style="color: black;">Made with 💚 for</a> <a href="../Developers/index.php" style="color: red;">KARE</a>
+</div>
+
 </body>
 </html>
 
