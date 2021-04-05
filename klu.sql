@@ -1,7 +1,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
---  Praveen
+--  Pravee
 CREATE TABLE Staff (
   StaffID varchar(255) PRIMARY KEY, 
   Name varchar(255) NOT NULL,
